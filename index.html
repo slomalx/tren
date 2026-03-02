@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trening stuff</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+    <div class="dual-range">
+        <div class="slider-track"></div>
+        <div class="range-selected" id="rangeSelected"></div> <!-- подсветка -->
+        <input type="range" id="slider-min" min="0" max="100" value="20" step="1">
+        <input type="range" id="slider-max" min="0" max="100" value="80" step="1">
+    </div>
+    <div class="values">
+        <span>Min: <span id="value-min">20</span></span>
+        <span>Max: <span id="value-max">80</span></span>
+    </div>
+<script src="./script.js"></script>
 </body>
 </html>

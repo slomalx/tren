@@ -1,0 +1,102 @@
+.dual-range {
+  position: relative;
+  width: 300px;
+  height: 40px; /* высота контейнера, чтобы вместить ползунки */
+  
+}
+
+        .range-selected {
+            position: absolute;
+            top: 50%;
+            height: 6px;          /* та же высота, что и трек */
+            background: #4CAF50;  /* яркий цвет */
+            border-radius: 3px;
+            transform: translateY(-50%);
+            z-index: 2;            /* поверх трека, но под ползунками */
+            pointer-events: none;  /* не перехватывает клики */
+        }
+
+/* Общий трек (фон) */
+.slider-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; /* чтобы трек не перехватывал клики */
+}
+
+/* Оба ползунка — одинаковые стили, наложены друг на друга */
+.dual-range input[type=range] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0; /* обнуляем высоту, т.к. ползунки будут невидимыми */
+  -webkit-appearance: none;
+  background: transparent;
+  transform: translateY(-50%);
+  pointer-events: none; /* отключаем события на всей области, кроме ползунков */
+  z-index: 2;
+}
+
+/* Включаем события для самого ползунка (бегунка) */
+.dual-range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto; /* разрешаем взаимодействие */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 3;
+}
+
+.dual-range input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dual-range input[type=range]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Скрываем стандартный трек у input */
+.dual-range input[type=range]::-webkit-slider-runnable-track {
+  background: transparent;
+}
+.dual-range input[type=range]::-moz-range-track {
+  background: transparent;
+}
+.dual-range input[type=range]::-ms-track {
+  background: transparent;
+}
+
+/* Стили для отображения значений */
+.values {
+  
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
+}
+.values span {
+  margin: 0 10px;
+}
