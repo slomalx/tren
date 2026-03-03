@@ -4,7 +4,7 @@
         const valueMax = document.getElementById('value-max');
         const rangeSelected = document.getElementById('rangeSelected');
 
-        const maxLimit = 100; // можно взять из атрибута max, но для простоты зададим
+        const maxLimit = 200; // можно взять из атрибута max, но для простоты зададим
 
         function updateValues() {
             valueMin.textContent = minSlider.value;
@@ -16,8 +16,8 @@
             const maxVal = maxSlider.value;
 
             // Вычисляем позиции в процентах
-            const leftPercent = (minVal / maxLimit) * 100;
-            const widthPercent = ((maxVal - minVal) / maxLimit) * 100;
+            const leftPercent = (minVal / maxLimit) * maxLimit;
+            const widthPercent = ((maxVal - minVal) / maxLimit) * maxLimit;
 
             // Применяем стили к подсветке
             rangeSelected.style.left = leftPercent + '%';
