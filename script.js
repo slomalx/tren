@@ -6,6 +6,9 @@
 
         const maxLimit = parseInt(minSlider.max); // можно взять из атрибута max, но для простоты зададим
 
+minSlider.value = minSlider.getAttribute('value') || 20;
+maxSlider.value = maxSlider.getAttribute('value') || 80;
+
         function updateValues() {
             valueMin.textContent = minSlider.value;
             valueMax.textContent = maxSlider.value;
