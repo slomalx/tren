@@ -48,3 +48,31 @@ maxSlider.value = maxSlider.getAttribute('value') || 80;
         // Инициализация
         updateValues();
         updateRangeHighlight();
+
+        const images = [
+            './img/Untitled-1.jpg',
+            './img/Untitled-2.jpg',
+            './img/Untitled-3.jpg',
+        ];
+
+        let currentIndex = 0;
+
+        const imgElement = document.getElementById('sliderImage');
+
+        function updateImage() {
+            imgElement.src = images[currentIndex];
+        }
+
+        document.getElementById('toRight').addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        })
+
+        document.getElementById('toLeft').addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        })
+
+
+
+        updateImage();

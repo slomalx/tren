@@ -27,6 +27,7 @@
   transform: translateY(-50%);
   z-index: 1;
   pointer-events: none; /* чтобы трек не перехватывал клики */
+  
 }
 
 /* Оба ползунка — одинаковые стили, наложены друг на друга */
@@ -67,3 +68,18 @@
 
 
 
+.slider {
+  height: 300px;
+  width: 400px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+img {
+    height: 300px;
+  width: 400px;
+}
+
+.button {
+  margin-top: 10px;
+}
