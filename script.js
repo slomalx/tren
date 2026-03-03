@@ -12,8 +12,8 @@
         }
 
         function updateRangeHighlight() {
-            const minVal = parseInt(minSlider.value);
-            const maxVal = parseInt(maxSlider.value);
+            const minVal = minSlider.value;
+            const maxVal = maxSlider.value;
 
             // Вычисляем позиции в процентах
             const leftPercent = (minVal / maxLimit) * 100;
