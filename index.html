@@ -31,12 +31,21 @@
     <span class="stuff">Rer</span>
 
     <div class="filters">
-        <input type="radio"> <span> только буквы</span> <br>
-        <input type="radio"> <span>только цифры</span> <br>
-        <input type="radio"> <span> есть буквы и цифры</span>
+        <label>
+            <input type="radio" name="mode" value="letters"> только буквы
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="mode" value="digits"> только цифры
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="mode" value="both"> есть буквы и цифры
+          </label>
     </div>
 
     <button class="filter-button">Отфильтровать</button>
+    <button class="filter-button">Сбросить фильтры</button>
     <div class="filtered">Результат выдачи: </div>
 </div>
 
