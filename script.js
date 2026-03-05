@@ -76,3 +76,39 @@ maxSlider.value = maxSlider.getAttribute('value') || 80;
 
 
         updateImage();
+
+
+let filterReset = document.getElementById('filter-reset');
+let radios = document.getElementsByName('mode');
+let goFilter = document.getElementById('go-filter');
+let filterValue = document.querySelectorAll('.stuff');
+let resultFilter = document.getElementById('resultFilter')
+let arr = Array.from(filterValue, span => span.textContent);
+let tempArr = [];
+
+
+filterReset.addEventListener('click', ()=> {
+    radios.forEach(radio => radio.checked = false);
+    resultFilter.textContent = 'Результат выдачи:'
+
+})
+
+goFilter.addEventListener('click', () => {
+    filterFunc();
+})
+
+function filterFunc() {
+    resultFilter.textContent = 'Результат выдачи:'
+    if ( radios[0].checked === false && radios[1].checked === false && radios[2].checked === false ) {
+    return resultFilter.textContent += arr;
+    } else if ( radios[0].checked) {
+     tempArr = arr.filter(value => /^[A-Za-z]+$/.test(value));
+     
+    } else if (radios[1].checked) {
+        tempArr = arr.filter(value => /^\d+$/.test(value))
+    } else if (radios[2].checked) {
+        tempArr = arr.filter(value => /^[A-Za-z0-9]+$/.test(value) && /[A-Za-z]/.test(value) &&  /[0-9]/.test(value)              
+);
+    }
+    return resultFilter.textContent += tempArr;
+}
